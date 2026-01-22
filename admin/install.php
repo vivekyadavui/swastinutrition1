@@ -40,41 +40,48 @@ try {
     
     $pdo->beginTransaction();
     try {
+        // Execute Schema
         foreach ($statements as $statement) {
             if (!empty($statement)) {
                 $pdo->exec($statement);
-                // Extract table name for display
                 if (preg_match('/CREATE TABLE (\w+)/i', $statement, $matches)) {
                     $tableName = $matches[1];
                     echo "<p>Table created: <strong>$tableName</strong></p>";
                 }
             }
         }
+
+        // Execute Seed if admins table is empty
+        $stmt = $pdo->query("SELECT COUNT(*) FROM admins");
+        $count = $stmt->fetchColumn();
+
+        if ($count == 0) {
+            echo "<p>Seeding initial data...</p>";
+            $seedPath = __DIR__ . '/cms/database/seed.sql';
+            if (file_exists($seedPath)) {
+                $seedSql = file_get_contents($seedPath);
+                $seedStatements = array_filter(array_map('trim', explode(';', $seedSql)));
+                foreach ($seedStatements as $sStatement) {
+                    if (!empty($sStatement)) {
+                        $pdo->exec($sStatement);
+                    }
+                }
+                echo "<p style='color: green;'>Initial admin user created successfully.</p>";
+            } else {
+                echo "<p style='color: orange;'>Seed file not found, creating default admin manually...</p>";
+                $hash = password_hash('admin123', PASSWORD_DEFAULT);
+                $pdo->prepare("INSERT INTO admins (name, email, password_hash, role, status) VALUES ('Admin', 'admin@example.com', ?, 'admin', 'active')")
+                    ->execute([$hash]);
+                echo "<p style='color: green;'>Default admin user created manually.</p>";
+            }
+        }
+
         $pdo->commit();
     } catch (Exception $e) {
-        $pdo->rollBack();
-        throw $e;
-    }
-
-    // Check if admins table is empty before seeding
-    $stmt = $pdo->query("SELECT COUNT(*) FROM admins");
-    $count = $stmt->fetchColumn();
-
-    if ($count == 0) {
-        echo "<p>Seeding initial data...</p>";
-        $seedPath = __DIR__ . '/cms/database/seed.sql';
-        if (file_exists($seedPath)) {
-            $seedSql = file_get_contents($seedPath);
-            $seedStatements = array_filter(array_map('trim', explode(';', $seedSql)));
-            foreach ($seedStatements as $sStatement) {
-                if (!empty($sStatement)) {
-                    $pdo->exec($sStatement);
-                }
-            }
-            echo "<p style='color: green;'>Initial admin user created! (<strong>admin@example.com</strong> / <strong>admin123</strong>)</p>";
+        if ($pdo->inTransaction()) {
+            $pdo->rollBack();
         }
-    } else {
-        echo "<p>Database already has data. Skipping seed.</p>";
+        throw $e;
     }
 
     echo "<h3 style='color: green;'>Installation completed successfully!</h3>";
