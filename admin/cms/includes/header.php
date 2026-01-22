@@ -47,6 +47,64 @@ declare(strict_types=1);
       .loader-wrapper { display: none !important; }
       /* Hide theme customizer button if it appears */
       .customizer-links, .customizer-contain { display: none !important; }
+      
+      /* Header Fixes */
+      .page-header {
+          background-color: #fff !important;
+          box-shadow: 0 0 20px rgba(89, 102, 122, 0.1);
+          z-index: 9;
+          position: fixed;
+          width: calc(100% - 280px); /* Adjust based on sidebar width */
+          margin-left: 280px;
+          height: 80px;
+          display: flex;
+          align-items: center;
+      }
+      .page-wrapper.compact-wrapper .page-header {
+          margin-left: 280px;
+          width: calc(100% - 280px);
+      }
+      .header-wrapper {
+          padding: 0 30px;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+      .nav-right {
+          flex: 1;
+          display: flex;
+          justify-content: flex-end;
+      }
+      .profile-media img {
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+          border-radius: 10px;
+          margin-right: 10px;
+      }
+      .media-body {
+          display: inline-block;
+          vertical-align: middle;
+      }
+      .media-body span {
+          font-weight: 700;
+          display: block;
+          line-height: 1;
+      }
+      .media-body p {
+          font-size: 12px;
+          margin: 0;
+          color: #898989;
+      }
+      .onhover-dropdown:hover .profile-dropdown {
+          top: 70px !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+      }
+      .logo-wrapper img {
+          height: 40px;
+      }
     </style>
     <?php echo $extra_css ?? ''; ?>
   </head>
