@@ -42,19 +42,15 @@ declare(strict_types=1);
     <link id="color" rel="stylesheet" href="../assets/css/color-1.css" media="screen">
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
+    <style>
+      /* Force hide loader if JS fails */
+      .loader-wrapper { display: none !important; }
+      /* Hide theme customizer button if it appears */
+      .customizer-links, .customizer-contain { display: none !important; }
+    </style>
     <?php echo $extra_css ?? ''; ?>
   </head>
   <body> 
-    <!-- loader starts-->
-    <div class="loader-wrapper">
-      <div class="theme-loader">    
-        <div class="loader-p"></div>
-      </div>
-    </div>
-    <!-- loader ends-->
-    <!-- tap on top starts-->
-    <div class="tap-top"><i data-feather="chevrons-up"></i></div>
-    <!-- tap on tap ends-->
     <!-- page-wrapper Start   -->
     <div class="page-wrapper compact-wrapper" id="pageWrapper">
       <!-- Page Header Start-->

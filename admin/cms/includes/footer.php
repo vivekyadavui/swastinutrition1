@@ -27,14 +27,10 @@ declare(strict_types=1);
     <script src="../assets/js/config.js"></script>
     <!-- Plugins js start-->
     <script src="../assets/js/sidebar-menu.js"></script>
-    <script src="../assets/js/slick/slick.min.js"></script>
-    <script src="../assets/js/slick/slick.js"></script>
-    <script src="../assets/js/header-slick.js"></script>
     <?php echo $extra_js ?? ''; ?>
     <!-- Plugins js Ends-->
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
-    <script src="../assets/js/theme-customizer/customizer.js"></script>
     <script>
       $(document).ready(function() {
         // Auto-generate slug from title
