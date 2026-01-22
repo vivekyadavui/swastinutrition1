@@ -1,0 +1,1115 @@
+{
+    "common": {
+        "sidebar": true,
+        "theme_customizer": true,
+        "slick": true,
+        "header_slider": true,
+        "scrollbar": true
+    },
+    "according": {
+        "$ref": "common",
+        "animate": true,
+        "height_equal" : true,
+        "prism": true,
+        "clipboard": true,
+        "customcard": true
+    },
+    "ace-code-editor": {
+      "$ref": "common",
+      "tooltip": true,
+      "ace_editor" : true,
+      "animate": true 
+    },
+    "add_post": {
+      "$ref": "common",
+      "dropzone": true,
+      "choice": true,
+      "add_post": true,
+      "editors": true,
+      "feather": true
+    },
+    "add-products": {
+      "$ref": "common",
+      "dropzone": true,
+      "page_select4": true,
+      "select2_options": true,
+      "flatpickr": true,
+      "animate": true,
+      "height_equal": true,
+      "tooltip": true,
+      "editors": true,
+      "editors2": true
+    },
+    "alert": {
+      "$ref": "common",
+      "alert": true,
+      "feather": true,
+      "height_equal": true,
+      "animate": true
+    },
+    "AOS": {
+      "$ref": "common",
+      "photo_swipe": true,
+      "isotope": true,
+      "aos": true,
+      "page_aos": true,
+      "page_masonry": true,
+      "animate": true
+    },
+    "apex_chart": {
+      "$ref": "common",
+      "apex": true,
+      "page_apex": true,
+      "config": true,
+      "feather": true,
+      "animate": true
+    },
+    "avatars": {
+      "$ref": "common",
+      "prism": true,
+      "clipboard": true,
+      "customcard": true,
+      "animate": true,
+      "height_equal": true
+    },
+    "base-input": {
+      "$ref": "common",
+      "prism": true,
+      "clipboard": true,
+      "animate": true,
+      "height_equal": true
+    },
+    "basic-card": {
+      "$ref": "common",
+      "prism": true,
+      "clipboard": true,
+      "customcard": true
+    },
+    "bootstrap-basic-table": {
+      "$ref": "common",
+      "animate": true
+    },
+    "blog-single": {
+      "$ref": "common"
+    },
+    "blog": {
+      "$ref": "common",
+      "animate": true
+    },
+    "bookmark": {
+      "$ref": "common",
+      "bookmark_page" :true,
+      "form_validation_custom" : true, 
+      "select2" : true,
+      "page_select2": true,
+      "bookmark_page": true,
+      "select2": true,
+      "animate": true
+    },
+    "breadcrumb": {
+      "$ref": "common",
+      "animate": true,
+      "height_equal": true
+    },
+    "buttons": {
+      "$ref": "common",
+      "prism" :true,
+      "clipboard": true,
+      "customcard": true,
+      "popover": true, 
+      "tooltip": true
+    },
+    "calendar-basic": {
+      "$ref": "common",
+      "animate": true,
+      "calendar": true
+    },
+    "cart": {
+      "$ref": "common",
+      "feather": true,
+      "touchspin": true,
+      "animate": true
+    },
+    "category": {
+      "$ref": "common",
+      "owlcarousel": true,
+      "js_datatables" : true,
+      "ecommerce" : true,
+      "feather": true,
+      "header_slider": true,
+      "datatables": true,
+      "custom_list_product": true,
+      "animate": true
+    },
+    "chart-flot": {
+      "$ref": "common",
+      "flotchart": true,
+      "page_flotchart": true,
+      "animate": true
+    },
+    "chart-google": {
+      "$ref": "common",
+      "googlechart": true,
+      "page_googlechart": true,
+      "animate": true
+    },
+    "chart-knob": {
+      "$ref": "common",
+      "config": true,
+      "knobchart": true,
+      "page_knobchart": true
+    },
+    "chart-peity": {
+      "$ref": "common",
+      "peitychart": true,
+      "page_peitychart": true,
+      "animate": true
+    },
+    "chart-widget": {
+      "$ref": "common",
+      "prism": true,
+      "clipboard": true,
+      "customcard": true,
+      "counter": true,
+      "config": true,
+      "apex_widget": true,
+      "apex": true,
+      "chart_widget": true
+    },
+    "ckeditor": {
+        "$ref": "common",
+        "ckeditor": true,
+        "page_ckeditor": true,
+        "animate": true
+    },
+    "clipboard": {
+        "$ref": "common",
+        "clipboard": true,
+        "page_clipboard": true,
+        "animate": true,
+        "height_equal": true
+    },
+    "invoice-template": {
+        "$ref": "common",
+        "print": true,
+        "counter": true,
+        "animate": true
+    },
+    "map-js": {
+        "$ref": "common",
+        "map_js": true,
+        "animate": true
+    },
+    "projectdetails": {
+        "$ref": "common",
+        "chat_menu": true,
+        "typeahead": true,
+        "typeahead_search": true,
+        "chartist": true,
+        "projectdetails": true,
+        "animate": true
+    },
+    "scroll-reval": {
+        "$ref": "common",
+        "photo_swipe": true,
+        "scrollreveal": true,
+        "pages_crollreveal": true,
+        "animate": true
+    },
+    "simple-MDE": {
+        "$ref": "common",
+        "tooltip": true,
+        "simple_mde": true,
+        "animate": true
+    },
+    "steps": {
+        "$ref": "common",
+        "tooltip": true,
+        "animate": true
+    },
+    "translate": {
+        "$ref": "common",
+        "internationalization": true,
+        "animate": true
+    },
+    "two-factor": {
+        "$ref": "common",
+        "tooltip": true,
+        "animate": true,
+        "verification_code": true
+    },
+    "whether-icon": {
+        "$ref": "common",
+        "whether_icon": true,
+        "page_whether_icon": true,
+        "notify" : true,
+        "icon_notify": true,
+        "animate": true 
+    },
+    "tilt": {
+        "$ref": "common",
+        "tilt": true,
+        "page_tilt": true,
+        "height_equal": true,
+        "animate": true
+    },
+    "summernote": {
+        "$ref": "common",
+        "summernote": true,
+        "jquery_ui": true,
+        "tooltip": true,
+        "animate": true
+    },
+    "owl-carousel": {
+        "$ref": "common",
+        "owlcarousel": true,
+        "page_owlcarousel": true,
+        "height_equal": true,
+        "animate": true
+    },
+    "layout-light": {
+        "$ref": "common",
+        "prism": true,
+        "tooltip" : true,
+        "clipboard": true,
+        "customcard": true,
+        "animate": true
+    },
+    "job-details": {
+        "$ref": "common",
+        "counter": true,
+        "animate": true
+    },
+    "chartist_chart": {
+      "$ref": "common",
+      "page_chartist": true,
+      "chartist": true
+    },
+   
+    "chartjs": {
+        "$ref": "common",
+        "config" :true,
+        "chartjs" :true,
+        "page_chartjs" :true
+    },
+    "checkout": {
+        "$ref": "common",
+        "animate": true
+    },
+
+    "comingsoon-bg-img": {
+        "countdown ": true
+    },
+    "comingsoon-bg-video": {
+        "countdown ": true
+    },
+    "comingsoon": {
+        "countdown ": true
+    },
+    "contacts": {
+        "$ref": "common",
+        "form_validation_custom": true,
+        "select2": true,
+        "page_select2": true,
+        "sweetalert2": true,
+        "notify": true,
+        "contact_page": true, 
+        "feather": true
+    },
+    "creative-card": {
+        "$ref": "common",
+        "height_equal": true,
+        "animate": true
+    },
+    "dashboard-02": {
+        "$ref": "common",
+        "apex": true,
+        "countdown" : true,
+        "dashboard_2": true,
+        "animate": true,
+        "vector_map" : true,
+        "page_vector_map" : true,
+        "owlcarousel": true,
+        "page_owlcarousel": true,
+        "counter": true 
+    },
+    "hide-on-scroll": {
+        "$ref": "common",
+        "tooltip": true,
+        "hide_on_scroll" : true,
+        "animate": true
+    },
+    "footer-fixed": {
+        "$ref": "common",
+        "tooltip": true,
+        "footer_fix" : true,
+        "footer_dark": true,
+        "animate": true
+    },
+    "animate": {
+        "$ref": "common",
+        "animate" : true,
+        "page_animate": true
+    },
+    "blog-single": {
+        "$ref": "common",
+        "animate" : true
+    },
+    "button-group": {
+        "$ref": "common",
+        "height_equal": true,
+        "animate": true
+    },
+    "chart-morris": {
+        "$ref": "common",
+        "morrischart": true,
+        "page_morrischart": true,
+        "animate": true
+    },
+    "chart-sparkline": {
+        "$ref": "common",
+        "sparkline": true,
+        "page_sparkline": true,
+        "animate": true
+    },
+    "chartist": {
+        "$ref": "common",
+        "chartist": true,
+        "page_chartist": true,
+        "animate": true
+    },
+  
+    "add-post": {
+        "$ref": "common",
+        "form_validation_custom": true,
+        "select2": true,
+        "page_select2" : true,
+        "ckeditor" : true,
+        "dropzone": true,
+        "email_app" : true,
+        "animate": true
+    },
+    "flag-icon": {
+        "$ref": "common",
+        "page_flag_icon": true,
+        "notify" : true,
+        "icon_notif": true,
+        "animate": true
+    },
+    "footer-light": {
+        "$ref": "common",
+        "tooltip": true,
+        "animate": true
+    },
+    "footer-dark": {
+        "$ref": "common",
+        "tooltip": true,
+        "footer_dark" : true,
+        "animate": true
+    },
+    "gallery-masonry": {
+        "$ref": "common",
+        "photo_swipe": true,
+        "page_masonry": true,
+        "isotope" : true,
+        "animate": true
+    },
+    "ico-icon": {
+        "$ref": "common",
+        "icon_notify": true,
+        "page_icon": true,
+        "notify": true,
+        "animate": true
+    },
+    "box-layout": {
+        "$ref": "common",
+        "animate": true,
+        "clipboard" :true,
+        "customcard" : true,
+        "tooltip": true,
+        "prism": true
+    },
+    "projects": {
+        "$ref": "common",
+        "chat_menu": true,
+        "typeahead" : true,
+        "typeahead_search" : true,
+        "animate" : true
+    },
+    "datatable-advance": {
+        "$ref": "common",
+        "datatable": true,
+        "animate":true,
+        "page_datatable1": true,
+        "datatable_advance": true 
+    },
+    "datatable-API": {
+        "$ref": "common",
+        "datatable": true,
+        "page_datatable": true
+    },
+    "datatable-basic-init": {
+        "$ref": "common",
+        "datatable": true,
+        "page_datatable": true,
+        "animate": true
+    },
+    "datatable-data-source": {
+        "$ref": "common",
+        "datatable": true,
+        "animate": true,
+        "page_datatable": true 
+    },
+    "datatable-ext-autofill": {
+        "$ref": "common",
+        "datatable": true,
+        "datatable_extension": true,
+        "animate": true
+    },
+    "datepicker": {
+        "$ref": "common",
+        "flatpickr": true,
+        "animate": true,
+        "height_equal": true
+    },
+    "dragable-card": {
+        "$ref": "common",
+        "draggable_page": true,
+        "height_equal": true,
+        "jquery_ui" : true,
+        "dragable" : true,
+        "animate": true
+    },
+    "dropdown": {
+        "$ref": "common",
+        "prism": true,
+        "animate": true,
+        "clipboard": true,
+        "customcard": true,
+        "height_equal" : true
+    },
+    "dropzone": {
+        "$ref": "common",
+        "tooltip": true,
+        "animate": true,
+        "dropzone": true,
+        "filepond": true
+    },
+    "echarts": {
+        "$ref": "common",
+        "echart": true,
+        "animate": true,
+        "echart_pie": true,
+        "page_echart": true
+    },
+    "edit-profile": {
+        "$ref": "common",
+        "animate": true
+    },
+    "faq": {
+        "$ref": "common",
+        "height_equal": true,
+        "animate": true
+    },
+    "feather_icon": {
+        "$ref": "common",
+        "feather": true,
+        "notify": true,
+        "icon_notify": true,
+        "animate": true,
+        "page_feather_icon": true
+    },
+    "file-manager": {
+        "$ref": "common",
+        "chat_menu" : true,
+        "typeahead" :true,
+        "animate": true,
+        "typeahead_search" : true,
+        "page_feather_icon": true
+    },
+    "font-awesome": {
+        "$ref": "common",
+        "page_icon": true,
+        "Icons_copy": true,
+        "notify": true,
+        "icon_notify": true,
+        "animate": true
+    },
+    "forget-password": {
+        "password_show": true
+    },
+    "form-validation": {
+        "$ref": "common",
+        "form_validation_custom": true,
+        "animate": true
+    },
+    "form-wizard-two": {
+        "$ref": "common",
+        "animate": true
+    },
+    "form-wizard": {
+        "$ref": "common",
+        "form_wizard": true,
+        "image_upload": true,
+        "animate": true
+    },
+    "gallery-hover": {
+        "$ref": "common",
+        "photo_swipe": true,
+        "animate": true
+    },
+    "gallery-with-description": {
+        "$ref": "common",
+        "photo_swipe": true
+    },
+    "gallery": {
+        "$ref": "common",
+        "photo_swipe": true,
+        "animate": true
+    },
+    "general-widget": {
+        "$ref": "common",
+        "general_widget": true,
+        "apex": true,
+        "swiper": true,
+        "date_picker": true,
+        "height_equal": true,
+        "vector_map": true,
+        "owlcarousel": true,
+        "page_owlcarousel" :true,
+        "animate": true,
+        "page_vector_map": true,
+        "countdown":true
+    },
+    "grid": {
+        "$ref": "common",
+        "animate": true
+    },
+    "group-chat": {
+        "$ref": "common",
+        "fullscreen" : true,
+        "common_chat": true,
+        "emoji_bar": true,
+        "touchspin": true
+    },
+    "helper-classes": {
+        "$ref": "common",
+        "animate": true,
+        "height_equal" : true
+    },
+    "image-cropper": {
+        "$ref": "common",
+        "image_cropper": true,
+        "height_equal": true,
+        "animate": true
+    },
+    "index": {
+        "$ref": "common",
+        "morrischart": true,
+        "apex": true,
+        "apexmoment": true,
+        "dashboard_default": true,
+        "owlcarousel": true,
+        "page_owlcarousel": true,
+        "page_datatable": true,
+        "datatable": true,
+        "page_datatable1": true,
+        "notify": true,
+        "animate": true,
+        "typeahead": true,
+        "typeahead_search": true,
+        "height_equal": true
+      },
+    "input-group": {
+        "$ref": "common",
+        "animate": true,
+        "height_equal": true
+    },
+    "input-mask": {
+        "$ref": "common",
+        "input_mask": true,
+        "header_slider": true,
+        "height_equal":true
+    },
+    "invoice-1": {
+        "$ref": "common",
+        "tooltip": true,
+        "counter": true,
+        "print": true
+    },
+    "invoice-2": {
+        "$ref": "common",
+        "tooltip": true,
+        "counter": true,
+        "print": true
+    },
+    "invoice-3": {
+        "$ref": "common",
+        "tooltip": true,
+        "counter": true,
+        "print": true
+    },
+    "invoice-4": {
+        "$ref": "common",
+        "tooltip": true,
+        "counter": true,
+        "print": true
+    },
+    "invoice-5": {
+        "$ref": "common",
+        "tooltip": true,
+        "counter": true,
+        "print": true
+    },
+    "job-apply": {
+        "$ref": "common",
+        "animate": true,
+        "select2": true,
+        "page_select2": true,
+        "date_picker": true
+    },
+    "job-cards-view": {
+        "$ref": "common",
+        "animate": true
+    },
+    "job-list-view": {
+        "$ref": "common",
+        "animate": true
+    },
+    "jsgrid-table": {
+        "$ref": "common",
+        "jsgrid": true,
+        "animate": true
+    },
+    "kanban": {
+        "$ref": "common",
+        "chat_menu": true,
+        "jkanban": true,
+        "typeahead":true,
+        "typeahead_search": true,
+        "animate": true
+    },
+    "knowledgebase": {
+        "$ref": "common"
+
+    },
+    "landing-page": {
+        "landing_sticky": true,
+        "wow": true,
+        "animate": true,
+        "scrollreveal": true,
+        "pages_crollreveal" : true, 
+        "slick": true,
+        "owlcarousel" :true,
+        "page_owlcarousel": true, 
+        "landing_font" : true
+    },
+    "layout-dark": {
+        "$ref": "common",
+        "prism": true,
+        "clipboard": true,
+        "customcard": true,
+        "theme_customizer": true,
+        "tooltip": true,
+        "animate" : true
+    },
+    "layout-rtl": {
+        "$ref": "common",
+        "prism": true,
+        "clipboard": true,
+        "animate": true,
+        "customcard": true,
+        "tooltip": true
+    },
+    "learning-detailed": {
+        "$ref": "common",
+        "animate": true
+    },
+    "learning-list-view": {
+        "$ref": "common",
+        "animate": true
+    },
+    "letter-box": {
+        "$ref": "common",
+        "email_pagination": true,
+        "tooltip": true,
+        "print": true,
+        "editors": true,
+        "editors1": true
+    },
+    "list-products": {
+        "$ref": "common",
+        "owlcarousel": true,
+        "js_datatables": true,
+        "ecommerce": true,
+        "tooltip": true,
+        "datatables": true,
+        "custom_list_product": true,
+        "animate": true
+    },
+    "list-wish": {
+        "$ref": "common",
+        "tooltip": true,
+        "page_datatable":  true,
+        "datatable": true,
+        "animate": true
+    },
+    "list": {
+        "$ref": "common",
+        "counter": true,
+        "height_equal" : true
+    },
+    "login_one": {
+        "sidebar": false
+    },
+    "login_two": {
+        "sidebar": false
+    },
+    "login-bs-tt-validation": {
+        "sidebar": false
+    },
+    "login-bs-validation": {
+        "sidebar": false
+    },
+    "login-sa-validation": {
+        "sidebar": false,
+        "sweetalert2": true,
+        "page_login": true
+    },
+    "login": {
+        "sidebar": false
+    },
+    "masonary_with_disc": {
+        "$ref": "common",
+        "photo_swipe": true,
+        "isotope": true,
+        "page_masonry": true,
+        "header_slider": true,
+        "animate": true
+    },
+    "megaoptions": {
+        "$ref": "common",
+        "height_equal" :true,
+        "animate": true
+    },
+    "modal-animated": {
+        "$ref": "common",
+        "modal_animated": true,
+        "animate": true
+    },
+    "modal": {
+        "$ref": "common",
+        "tooltip" : true,
+        "popover": true,
+        "validation_modal" : true,
+        "popper" : true,
+        "height_equal" :true,
+        "popover_custom" : true,
+        "animate": true
+    },
+    "order-history": {
+        "$ref": "common",
+        "page_datatable": true,
+        "datatable": true,
+        "animate": true
+    },
+    "timeline-v-1" : {
+        "$ref": "common",
+        "timeline_1" : true,
+        "height_equal" : true,
+        "modernizr": true,
+        "animate": true
+    },
+    "wow" : {
+        "$ref": "common",
+        "photo_swipe" : true,
+        "isotope": true,
+        "wow" : true,
+        "page_wow":  true,
+        "height_equal" : true,
+        "animate": true
+    },
+    "feather-icon" : {
+        "$ref": "common",
+        "page_feather_icon" : true,
+        "notify": true,
+        "icon_notify":  true,
+        "height_equal" : true,
+        "animate": true
+    },
+    "masonry-gallery-with-disc": {
+        "$ref": "common",
+        "photo_swipe" : true,
+        "isotope" : true, 
+        "page_masonry": true
+    },
+    "chart-apex" : {
+        "$ref": "common",
+        "apex" : true,
+        "page_apex": true,
+        "height_equal" : true,
+        "animate": true
+    },
+    "sweet-alert2": {
+        "$ref": "common",
+        "height_equal" : true,
+        "animate": true,
+        "sweetalert2": true,
+        "product-details": true
+    },
+    "pagination": {
+        "$ref": "common",
+        "height_equal" : true 
+    },
+    "payment-details": {
+        "$ref": "common",
+        "height_equal" : true 
+    },
+    "popover": {
+        "$ref": "common",
+        "counter" : true, 
+        "popover_custom": true,
+        "prism": true,
+        "clipboard": true,
+        "customcard": true
+    },
+    "pricing": {
+        "$ref": "common",
+        "counter" : true,
+        "animate": true
+    },
+    "private-chat": {
+        "$ref": "common",
+        "fullscreen" : true,
+        "common_chat": true,
+        "emoji_bar": true
+    },
+    "product-page": {
+        "$ref": "common",
+        "rating" : true,
+        "animate": true,
+        "ecommerce": true,
+        "owlcarousel": true,
+        "page_owlcarousel": true
+    },
+    "product": {
+        "$ref": "common",
+        "range_slider" : true, 
+        "swiper": true,
+        "page_range_slider" : true,
+        "touchspin" :true,
+        "select2" : true,
+        "page_select2": true,
+        "product_tab" : true,
+        "owlcarousel" :true, 
+        "animate" : true
+    },
+    "progress-bar": {
+        "$ref": "common",
+        "animate" :true
+    },
+    "projectcreate": {
+        "$ref": "common",
+        "chat_menu" : true,
+        "dropzone": true,
+        "typeahead" : true,
+        "typeahead_search" : true,
+        "animate" : true, 
+        "date_picker" :  true 
+    },
+    "typeahead" : { 
+        "$ref": "common",
+        "typeahead" : true, 
+        "animate" : true 
+    },
+    "radio-checkbox-control": {
+        "$ref": "common",
+        "animate" : true,
+        "height_equal": true 
+    },
+    "range-slider": {
+        "$ref": "common",
+        "range_slider": true,
+        "animate" : true,
+        "page_range_slider" : true
+    },
+    "rating": {
+        "$ref": "common",
+        "rating": true,
+        "height_equal": true,
+        "emoji_rating": true,
+        "animate":true
+    },
+    "reset-password": {
+        "password_show": true
+    },
+    "ribbons": {
+        "$ref": "common",
+        "animate": true
+    },
+    "sample-page": {
+        "$ref": "common",
+        "animate": true
+    },
+    "scrollable": {
+        "$ref": "common",
+        "scrollpage": true,
+        "animate" : true
+    },
+    "search": {
+        "$ref": "common",
+        "photo_swipe": true,
+        "animate" : true
+    },
+    "select2": {
+        "$ref": "common",
+        "page_select3": true,
+        "select2_options": true,
+        "custom_select2": true,
+        "animate" : true
+    },
+    "sign-up-one": {
+        "sidebar": false
+    },
+    "sign-up-two": {
+        "sidebar": false
+    },
+    "sign-up-wizard": {
+        "animate": true,
+        "tooltip": true,
+        "form_wizard_four": true
+    },
+    "sign-up": {
+        "sidebar": false
+    },
+    "social-app": {
+        "$ref": "common",
+        "photo_swipe": true,
+        "animate" : true
+    },
+    "support-ticket": {
+        "$ref": "common",
+        "tooltip": true,
+        "datatable": true,
+        "counter": true,
+        "support_ticket_custom": true,
+        "feather": true,
+        "animate": true 
+    },
+    "sweetalert2": {
+        "$ref": "common",
+        "sweetalert2": true,
+        "page_sweetalert2": true,
+        "animate": true,
+        "height_equal" : true
+    },
+    "switch": {
+        "$ref": "common",
+        "animate" : true,
+        "height_equal": true
+    },
+    "tab-bootstrap": {
+        "$ref": "common",
+        "height_equal": true,
+        "animate" : true
+    },
+    "table-components": {
+        "$ref": "common",
+        "animate": true
+    },
+    "tag-pills": {
+        "$ref": "common",
+        "prism": true,
+        "animate": true,
+        "height_equal": true,
+        "clipboard": true,
+        "customcard": true
+    },
+    "task": {
+        "$ref": "common",
+        "select2": true,
+        "page_select2": true,
+        "form_validation_custom": true,
+        "date_picker": true,
+        "task_page": true,
+        "animate": true
+    },
+    "themify-icon": {
+        "$ref": "common",
+        "notify": true,
+        "icon_notify": true,
+        "animate": true,
+        "page_icon": true
+    },
+    "timeline": {
+        "$ref": "common",
+        "animate" : true,
+        "timeline_1": true,
+        "modernizr": true,
+        "height_equal" : true
+    },
+    "to-do": {
+        "$ref": "common",
+        "todo": true,
+        "animate" : true
+    },
+    "toasts": {
+        "$ref": "common",
+        "toasts": true,
+        "page_notify" : true,
+        "animate" :  true
+    },
+    "tooltip": {
+        "$ref": "common",
+        "tooltip": true,
+        "animate" : true,
+        "prism": true,
+        "clipboard": true,
+        "customcard": true
+    },
+    "touchspin": {
+        "$ref": "common",
+        "touchspin_2": true,
+        "animate" : true
+    },
+    "tour": {
+        "$ref": "common",
+        "tour": true, 
+        "animate" : true
+    },
+    "tree": {
+        "$ref": "common",
+        "tree": true,
+        "animate" : true
+    },
+    "typehead": {
+        "$ref": "common",
+        "choice": true,
+        "typeahead": true,
+        "animate" : true
+    },
+    "typography": {
+        "$ref": "common",
+        "height_equal" : true,
+        "animate" : true
+    },
+    "unlock": {
+        "password_show": true
+    },
+    "user-cards": {
+        "$ref": "common",
+        "animate" : true
+    },
+    "user-profile": {
+        "$ref": "common",
+        "counter": true,
+        "photo_swipe": true,
+        "animate": true
+    },
+    "vector-map": {
+        "$ref": "common",
+        "vector_map": true,
+        "animate": true,
+        "page_vector_map": true 
+    }
+  }
