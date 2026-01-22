@@ -11,7 +11,10 @@ $error = flash('error');
 
 // Handle Add Menu
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_menu'])) {
-    $name = trim($_POST['name'] ?? '');
+    if (!verify_csrf($_POST['csrf_token'] ?? null)) {
+        $_SESSION['error'] = "Security token expired.";
+    } else {
+        $name = trim($_POST['name'] ?? '');
     $location = trim($_POST['location'] ?? '');
     if (!empty($name) && !empty($location)) {
         $stmt = db()->prepare("INSERT INTO menus (name, location) VALUES (?, ?)");
@@ -55,6 +58,7 @@ include __DIR__ . '/includes/sidebar.php';
                     </div>
                     <div class="card-body">
                         <form method="post">
+                            <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
                             <input type="hidden" name="add_menu" value="1">
                             <div class="mb-3">
                                 <label class="form-label">Menu Name</label>

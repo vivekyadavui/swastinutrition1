@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/includes/bootstrap.php';
 require_login();
+$user = current_user();
 
 $id = (int)($_GET['id'] ?? 0);
 if (!$id) redirect('pages.php');
@@ -19,7 +20,9 @@ $errors = [];
 
 // Handle Update
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['update_section'])) {
+    if (!verify_csrf($_POST['csrf_token'] ?? null)) {
+        $_SESSION['error'] = "Security token expired. Please try again.";
+    } elseif (isset($_POST['update_section'])) {
         $sec_title = trim($_POST['title'] ?? '');
         $sec_status = $_POST['status'] ?? 'active';
         $sec_content = $_POST['content'] ?? null;
@@ -108,6 +111,7 @@ include __DIR__ . '/includes/sidebar.php';
         <?php endif; ?>
 
         <form method="post" id="sectionForm">
+            <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
             <input type="hidden" name="update_section" value="1">
             <div class="row">
                 <div class="col-xl-8">

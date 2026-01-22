@@ -9,32 +9,36 @@ $title = "Add New Page";
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $page_title = trim($_POST['title'] ?? '');
-    $slug = trim($_POST['slug'] ?? '');
-    $meta_title = trim($_POST['meta_title'] ?? '');
-    $meta_description = trim($_POST['meta_description'] ?? '');
-    $meta_keywords = trim($_POST['meta_keywords'] ?? '');
-    $canonical_url = trim($_POST['canonical_url'] ?? '');
-    $status = $_POST['status'] ?? 'draft';
+    if (!verify_csrf($_POST['csrf_token'] ?? null)) {
+        $errors[] = "Security token expired. Please try again.";
+    } else {
+        $page_title = trim($_POST['title'] ?? '');
+        $slug = trim($_POST['slug'] ?? '');
+        $meta_title = trim($_POST['meta_title'] ?? '');
+        $meta_description = trim($_POST['meta_description'] ?? '');
+        $meta_keywords = trim($_POST['meta_keywords'] ?? '');
+        $canonical_url = trim($_POST['canonical_url'] ?? '');
+        $status = $_POST['status'] ?? 'draft';
 
-    if (empty($page_title)) $errors[] = "Title is required.";
-    if (empty($slug)) $errors[] = "Slug is required.";
+        if (empty($page_title)) $errors[] = "Title is required.";
+        if (empty($slug)) $errors[] = "Slug is required.";
 
-    // Check slug uniqueness
-    $stmt = db()->prepare("SELECT id FROM pages WHERE slug = ? LIMIT 1");
-    $stmt->execute([$slug]);
-    if ($stmt->fetch()) {
-        $errors[] = "Slug already exists. Please use a unique slug.";
-    }
+        // Check slug uniqueness
+        $stmt = db()->prepare("SELECT id FROM pages WHERE slug = ? LIMIT 1");
+        $stmt->execute([$slug]);
+        if ($stmt->fetch()) {
+            $errors[] = "Slug already exists. Please use a unique slug.";
+        }
 
-    if (empty($errors)) {
-        $stmt = db()->prepare("INSERT INTO pages (title, slug, meta_title, meta_description, meta_keywords, canonical_url, status) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        if ($stmt->execute([$page_title, $slug, $meta_title, $meta_description, $meta_keywords, $canonical_url, $status])) {
-            $page_id = db()->lastInsertId();
-            $_SESSION['success'] = "Page created successfully.";
-            redirect("page-edit.php?id=$page_id");
-        } else {
-            $errors[] = "Failed to create page.";
+        if (empty($errors)) {
+            $stmt = db()->prepare("INSERT INTO pages (title, slug, meta_title, meta_description, meta_keywords, canonical_url, status) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            if ($stmt->execute([$page_title, $slug, $meta_title, $meta_description, $meta_keywords, $canonical_url, $status])) {
+                $page_id = db()->lastInsertId();
+                $_SESSION['success'] = "Page created successfully.";
+                redirect("page-edit.php?id=$page_id");
+            } else {
+                $errors[] = "Failed to create page.";
+            }
         }
     }
 }
@@ -63,6 +67,7 @@ include __DIR__ . '/includes/sidebar.php';
 
     <div class="container-fluid">
         <form class="form-bookmark needs-validation" method="post">
+            <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
             <div class="row">
                 <div class="col-xl-8">
                     <div class="card">

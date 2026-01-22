@@ -11,6 +11,10 @@ $error = flash('error');
 
 // Handle Upload
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['file'])) {
+    if (!verify_csrf($_POST['csrf_token'] ?? null)) {
+        $_SESSION['error'] = "Security token expired.";
+        redirect('media.php');
+    }
     $file = $_FILES['file'];
     $allowed = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
     $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
@@ -91,6 +95,7 @@ include __DIR__ . '/includes/sidebar.php';
                         <?php endif; ?>
 
                         <form action="media.php" method="post" enctype="multipart/form-data" class="dropzone" id="mediaDropzone">
+                            <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
                             <div class="fallback">
                                 <input name="file" type="file" multiple>
                             </div>

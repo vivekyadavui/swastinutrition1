@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/includes/bootstrap.php';
 require_login();
+$user = current_user();
 
 $id = (int)($_GET['id'] ?? 0);
 if (!$id) redirect('menus.php');
@@ -17,7 +18,10 @@ $success = flash('success');
 
 // Handle Add Item
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_item'])) {
-    $title = trim($_POST['title'] ?? '');
+    if (!verify_csrf($_POST['csrf_token'] ?? null)) {
+        $_SESSION['error'] = "Security token expired.";
+    } else {
+        $title = trim($_POST['title'] ?? '');
     $type = $_POST['link_type'] ?? 'page';
     $page_id = (int)($_POST['page_id'] ?? 0) ?: null;
     $custom_url = trim($_POST['custom_url'] ?? '');
@@ -68,6 +72,7 @@ include __DIR__ . '/includes/sidebar.php';
                     </div>
                     <div class="card-body">
                         <form method="post">
+                            <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
                             <input type="hidden" name="add_item" value="1">
                             <div class="mb-3">
                                 <label class="form-label">Label</label>

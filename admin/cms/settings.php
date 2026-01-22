@@ -10,7 +10,10 @@ $success = flash('success');
 
 // Handle Save
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    foreach ($_POST['settings'] as $key => $value) {
+    if (!verify_csrf($_POST['csrf_token'] ?? null)) {
+        $_SESSION['error'] = "Security token expired.";
+    } else {
+        foreach ($_POST['settings'] as $key => $value) {
         $stmt = db()->prepare("INSERT INTO settings (setting_key, setting_value) VALUES (?, ?) ON DUPLICATE KEY UPDATE setting_value = ?");
         $stmt->execute([$key, $value, $value]);
     }
@@ -53,6 +56,7 @@ include __DIR__ . '/includes/sidebar.php';
         <?php endif; ?>
 
         <form method="post">
+            <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
             <div class="row">
                 <div class="col-md-8">
                     <div class="card">

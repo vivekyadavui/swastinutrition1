@@ -5,6 +5,10 @@ require __DIR__ . '/includes/bootstrap.php';
 require_login();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!verify_csrf($_POST['csrf_token'] ?? null)) {
+        $_SESSION['error'] = "Security token expired.";
+        redirect('pages.php');
+    }
     $page_id = (int)$_POST['page_id'];
     $type = trim($_POST['type']);
     $title = trim($_POST['title'] ?? '');

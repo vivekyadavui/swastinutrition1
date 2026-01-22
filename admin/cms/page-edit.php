@@ -20,31 +20,35 @@ $errors = [];
 $success = flash('success');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_page'])) {
-    $page_title = trim($_POST['title'] ?? '');
-    $slug = trim($_POST['slug'] ?? '');
-    $meta_title = trim($_POST['meta_title'] ?? '');
-    $meta_description = trim($_POST['meta_description'] ?? '');
-    $meta_keywords = trim($_POST['meta_keywords'] ?? '');
-    $canonical_url = trim($_POST['canonical_url'] ?? '');
-    $status = $_POST['status'] ?? 'draft';
+    if (!verify_csrf($_POST['csrf_token'] ?? null)) {
+        $errors[] = "Security token expired. Please try again.";
+    } else {
+        $page_title = trim($_POST['title'] ?? '');
+        $slug = trim($_POST['slug'] ?? '');
+        $meta_title = trim($_POST['meta_title'] ?? '');
+        $meta_description = trim($_POST['meta_description'] ?? '');
+        $meta_keywords = trim($_POST['meta_keywords'] ?? '');
+        $canonical_url = trim($_POST['canonical_url'] ?? '');
+        $status = $_POST['status'] ?? 'draft';
 
-    if (empty($page_title)) $errors[] = "Title is required.";
-    if (empty($slug)) $errors[] = "Slug is required.";
+        if (empty($page_title)) $errors[] = "Title is required.";
+        if (empty($slug)) $errors[] = "Slug is required.";
 
-    // Check slug uniqueness excluding self
-    $stmt = db()->prepare("SELECT id FROM pages WHERE slug = ? AND id != ? LIMIT 1");
-    $stmt->execute([$slug, $id]);
-    if ($stmt->fetch()) {
-        $errors[] = "Slug already exists. Please use a unique slug.";
-    }
+        // Check slug uniqueness excluding self
+        $stmt = db()->prepare("SELECT id FROM pages WHERE slug = ? AND id != ? LIMIT 1");
+        $stmt->execute([$slug, $id]);
+        if ($stmt->fetch()) {
+            $errors[] = "Slug already exists. Please use a unique slug.";
+        }
 
-    if (empty($errors)) {
-        $stmt = db()->prepare("UPDATE pages SET title = ?, slug = ?, meta_title = ?, meta_description = ?, meta_keywords = ?, canonical_url = ?, status = ?, updated_at = NOW() WHERE id = ?");
-        if ($stmt->execute([$page_title, $slug, $meta_title, $meta_description, $meta_keywords, $canonical_url, $status, $id])) {
-            $_SESSION['success'] = "Page updated successfully.";
-            redirect("page-edit.php?id=$id");
-        } else {
-            $errors[] = "Failed to update page.";
+        if (empty($errors)) {
+            $stmt = db()->prepare("UPDATE pages SET title = ?, slug = ?, meta_title = ?, meta_description = ?, meta_keywords = ?, canonical_url = ?, status = ?, updated_at = NOW() WHERE id = ?");
+            if ($stmt->execute([$page_title, $slug, $meta_title, $meta_description, $meta_keywords, $canonical_url, $status, $id])) {
+                $_SESSION['success'] = "Page updated successfully.";
+                redirect("page-edit.php?id=$id");
+            } else {
+                $errors[] = "Failed to update page.";
+            }
         }
     }
 }
@@ -136,6 +140,7 @@ include __DIR__ . '/includes/sidebar.php';
                             <!-- SEO Tab -->
                             <div class="tab-pane fade" id="seo" role="tabpanel" aria-labelledby="seo-tab">
                                 <form method="post">
+                                    <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
                                     <input type="hidden" name="update_page" value="1">
                                     <!-- Hidden fields for settings tab values to keep them intact -->
                                     <input type="hidden" name="title" value="<?php echo e($page['title']); ?>">
@@ -173,6 +178,7 @@ include __DIR__ . '/includes/sidebar.php';
                             <!-- Page Info Tab -->
                             <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                                 <form method="post">
+                                    <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
                                     <input type="hidden" name="update_page" value="1">
                                     <!-- Hidden fields for SEO tab values -->
                                     <input type="hidden" name="meta_title" value="<?php echo e($page['meta_title']); ?>">
@@ -220,6 +226,7 @@ include __DIR__ . '/includes/sidebar.php';
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="section-add.php" method="post">
+                <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
                 <input type="hidden" name="page_id" value="<?php echo $id; ?>">
                 <div class="modal-body">
                     <div class="mb-3">
