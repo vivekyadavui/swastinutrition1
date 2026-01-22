@@ -68,27 +68,8 @@ declare(strict_types=1);
               </svg>
             </div>
           </div>
-          <form class="col-sm-4 form-inline search-full d-none d-xl-block" action="#" method="get">
-            <div class="form-group">
-              <div class="Typeahead Typeahead--twitterUsers">
-                <div class="u-posRelative">
-                  <input class="demo-input Typeahead-input form-control-plaintext w-100" type="text" placeholder="Type to Search .." name="q" title="" autofocus>
-                  <svg class="search-bg svg-color">
-                    <use href="../assets/svg/icon-sprite.svg#search"></use>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </form>
           <div class="nav-right col-xl-8 col-lg-12 col-auto pull-right right-header p-0">
             <ul class="nav-menus">
-              <li class="onhover-dropdown"> 
-                <div class="notification-box">
-                  <svg>
-                    <use href="../assets/svg/icon-sprite.svg#stroke-notification"></use>
-                  </svg><span class="badge rounded-pill badge-primary">0</span>
-                </div>
-              </li>
               <li class="profile-nav onhover-dropdown pe-0 py-0">
                 <div class="media profile-media"><img class="b-r-10" src="../assets/images/dashboard/profile.png" alt="">
                   <div class="media-body"><span><?php echo e($user['name']); ?></span>
