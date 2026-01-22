@@ -12,15 +12,16 @@ function current_user(): ?array
         return null;
     }
 
-    if (!empty($_SESSION['admin_name']) && !empty($_SESSION['admin_email'])) {
+    if (!empty($_SESSION['admin_name']) && !empty($_SESSION['admin_email']) && !empty($_SESSION['admin_role'])) {
         return [
             'id' => (int) $_SESSION['admin_id'],
             'name' => (string) $_SESSION['admin_name'],
             'email' => (string) $_SESSION['admin_email'],
+            'role' => (string) $_SESSION['admin_role'],
         ];
     }
 
-    $stmt = db()->prepare('SELECT id, name, email FROM admins WHERE id = :id LIMIT 1');
+    $stmt = db()->prepare('SELECT id, name, email, role FROM admins WHERE id = :id LIMIT 1');
     $stmt->execute(['id' => $_SESSION['admin_id']]);
     $user = $stmt->fetch();
 
@@ -31,6 +32,7 @@ function current_user(): ?array
 
     $_SESSION['admin_name'] = $user['name'];
     $_SESSION['admin_email'] = $user['email'];
+    $_SESSION['admin_role'] = $user['role'];
 
     return $user;
 }
@@ -41,6 +43,7 @@ function login_user(array $user): void
     $_SESSION['admin_id'] = (int) $user['id'];
     $_SESSION['admin_name'] = (string) $user['name'];
     $_SESSION['admin_email'] = (string) $user['email'];
+    $_SESSION['admin_role'] = (string) $user['role'];
 }
 
 function require_login(): void

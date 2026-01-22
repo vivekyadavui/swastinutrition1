@@ -17,9 +17,9 @@ function debug_log(string $message, array $data = [], string $hypothesisId = 'Un
     file_put_contents($logPath, $logEntry . PHP_EOL, FILE_APPEND);
 }
 
-function e(string $value): string
+function e(?string $value): string
 {
-    return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+    return htmlspecialchars((string)($value ?? ''), ENT_QUOTES, 'UTF-8');
 }
 
 function redirect(string $path): void
