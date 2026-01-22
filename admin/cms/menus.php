@@ -15,12 +15,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_menu'])) {
         $_SESSION['error'] = "Security token expired.";
     } else {
         $name = trim($_POST['name'] ?? '');
-    $location = trim($_POST['location'] ?? '');
-    if (!empty($name) && !empty($location)) {
-        $stmt = db()->prepare("INSERT INTO menus (name, location) VALUES (?, ?)");
-        $stmt->execute([$name, $location]);
-        $_SESSION['success'] = "Menu created.";
-        redirect('menus.php');
+        $location = trim($_POST['location'] ?? '');
+        if (!empty($name) && !empty($location)) {
+            $stmt = db()->prepare("INSERT INTO menus (name, location) VALUES (?, ?)");
+            $stmt->execute([$name, $location]);
+            $_SESSION['success'] = "Menu created.";
+            redirect('menus.php');
+        }
     }
 }
 

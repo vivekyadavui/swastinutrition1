@@ -22,14 +22,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_item'])) {
         $_SESSION['error'] = "Security token expired.";
     } else {
         $title = trim($_POST['title'] ?? '');
-    $type = $_POST['link_type'] ?? 'page';
-    $page_id = (int)($_POST['page_id'] ?? 0) ?: null;
-    $custom_url = trim($_POST['custom_url'] ?? '');
+        $type = $_POST['link_type'] ?? 'page';
+        $page_id = (int)($_POST['page_id'] ?? 0) ?: null;
+        $custom_url = trim($_POST['custom_url'] ?? '');
 
-    $stmt = db()->prepare("INSERT INTO menu_items (menu_id, title, link_type, page_id, custom_url) VALUES (?, ?, ?, ?, ?)");
-    $stmt->execute([$id, $title, $type, $page_id, $custom_url]);
-    $_SESSION['success'] = "Menu item added.";
-    redirect("menu-edit.php?id=$id");
+        $stmt = db()->prepare("INSERT INTO menu_items (menu_id, title, link_type, page_id, custom_url) VALUES (?, ?, ?, ?, ?)");
+        $stmt->execute([$id, $title, $type, $page_id, $custom_url]);
+        $_SESSION['success'] = "Menu item added.";
+        redirect("menu-edit.php?id=$id");
+    }
 }
 
 // Fetch Pages for linking

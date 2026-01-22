@@ -14,10 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['error'] = "Security token expired.";
     } else {
         foreach ($_POST['settings'] as $key => $value) {
-        $stmt = db()->prepare("INSERT INTO settings (setting_key, setting_value) VALUES (?, ?) ON DUPLICATE KEY UPDATE setting_value = ?");
-        $stmt->execute([$key, $value, $value]);
+            $stmt = db()->prepare("INSERT INTO settings (setting_key, setting_value) VALUES (?, ?) ON DUPLICATE KEY UPDATE setting_value = ?");
+            $stmt->execute([$key, $value, $value]);
+        }
+        $_SESSION['success'] = "Settings updated successfully.";
     }
-    $_SESSION['success'] = "Settings updated successfully.";
     redirect('settings.php');
 }
 
